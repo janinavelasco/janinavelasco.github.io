@@ -1,0 +1,25 @@
+{
+  "name": "static-site-setup",
+  "version": "0.0.1",
+  "description": "A blank project set up for static sites.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@roblcopeland",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-file-include": "^0.13.7",
+    "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "minimist": "^1.1.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.0"
+  }
+}
