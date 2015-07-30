@@ -52,6 +52,10 @@ gulp.task('sass', function(){
     .pipe(plugins.sass({
       outputStyle: 'compressed'
     }).on('error', plugins.sass.logError))
+    .pipe(plugins.autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+      }))
     .pipe(plugins.if(options.compress === 'off', plugins.sourcemaps.write()))
     .pipe(gulp.dest('public/'))
     .pipe(browserSync.stream());

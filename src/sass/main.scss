@@ -1,1 +1,8 @@
-@import "vendor/normalize";
+@import 'vendor/normalize';
+@import 'global';
+
+//import wireframing styles - delete this stuff for actual projects
+@import 'wireframing/wf-color';
+@import 'wireframing/wf-type';
+@import 'wireframing/wf-layout';
+@import 'wireframing/wf-swatch';

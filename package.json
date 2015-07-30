@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-file-include": "^0.13.7",
     "gulp-if": "^1.2.5",
