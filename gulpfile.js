@@ -1,5 +1,3 @@
-'use strict';
-
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var minimist = require('minimist'); // used for the default args (knownOptions)
@@ -12,7 +10,7 @@ var knownOptions = {
   //for telling us whether or not to make sourcemaps for css or uglify for js
   string: 'compress',
   default: {compress: 'on'}
-}
+};
 
 var options = minimist(process.argv.slice(2), knownOptions);
 
@@ -42,7 +40,7 @@ gulp.task('markup', function(){
   gulp.src(['src/index.html'])
     .pipe(plugins.fileinclude({
       prefix: '@@'
-    })) 
+    }))
     .pipe(gulp.dest('.'))
     .pipe(browserSync.stream());
 });
@@ -56,13 +54,15 @@ gulp.task('sass', function(){
     }).on('error', plugins.sass.logError))
     .pipe(plugins.if(options.compress === 'off', plugins.sourcemaps.write()))
     .pipe(gulp.dest('public/'))
-    .pipe(browserSync.stream());      
+    .pipe(browserSync.stream());
 });
 
 // Parse src/javascript/*, uglify and concat, then output to public/main.js
 gulp.task('javascript', function(){
   gulp.src(['src/js/**/*.js'])
     .pipe(plugins.concat('main.js'))
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('jshint-stylish'))
     .pipe(plugins.if(options.compress === 'on', plugins.uglify()))
     .pipe(gulp.dest('public/'))
     .pipe(browserSync.stream());
