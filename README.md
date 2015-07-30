@@ -9,8 +9,11 @@ This is a project that's ready to begin work using the following tech stack:
 Put source code in the src/ directory, it will get processed into ./index.html and public/
 
 ## Getting Started
-
-Use 
+Do an 
+    
+    npm install
+    
+then use 
 
     gulp
 
